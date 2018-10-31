@@ -5,11 +5,11 @@
 # Depends on: cmake xfce4-panel
 
 name=xfce4-whiskermenu-plugin
-version=1.6.2
+version=2.3.0
 release=1
-source=(http://gottcode.org/$name/$name-$version.tar.bz2)
-build() {
+source=(https://gottcode.org/$name/$name-$version-src.tar.bz2)
 
+build() {
 cd $name-$version
 cmake \
     -DCMAKE_BUILD_TYPE=Release \

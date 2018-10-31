@@ -4,9 +4,8 @@
 # Depends on: xorg-libxinerama xorg-libxrandr xorg-libsm thunar libexif 
 
 name=ristretto
-version=0.8.0
+version=0.8.3
 release=1
-
 source=(http://archive.xfce.org/src/apps/$name/${version%.*}/$name-$version.tar.bz2)
 
 build() {

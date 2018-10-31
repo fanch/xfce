@@ -4,10 +4,9 @@
 # Depends on: xfce4-panel
 
 name=xfce4-datetime-plugin
-version=0.6.2
-release=2
-
-source=(http://archive.xfce.org/src/panel-plugins/$name/0.6/$name-$version.tar.bz2)
+version=0.7.0
+release=1
+source=(http://archive.xfce.org/src/panel-plugins/$name/0.7/$name-$version.tar.bz2)
 
 build() {
 cd $name-$version

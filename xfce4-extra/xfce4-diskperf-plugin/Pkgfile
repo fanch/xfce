@@ -5,8 +5,7 @@
 
 name=xfce4-diskperf-plugin
 version=2.5.5
-release=2
-
+release=1
 source=(http://archive.xfce.org/src/panel-plugins/$name/2.5/$name-$version.tar.bz2)
 
 build() {
@@ -17,7 +16,7 @@ cd $name-$version
     --libexecdir=/usr/lib \
     --localstatedir=/var \
     --disable-static \
-    --disable-debug
+    --disable-debug 
 	make
 	make DESTDIR=$PKG install
 }

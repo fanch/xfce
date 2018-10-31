@@ -8,8 +8,8 @@ run=(desktop-file-utils)
 name=thunar-volman
 version=0.8.1
 release=2
+source=(http://archive.xfce.org/src/xfce/$name/${version%.*}/$name-$version.tar.bz2)
 
-source=(http://archive.xfce.org/src/xfce/$name/${version%.*}/$name-$version.tar.bz2 )
 build() {
 cd $name-$version
 ./configure --prefix=/usr \

@@ -4,9 +4,8 @@
 # Depends on: xfce4-panel
 
 name=xfce4-verve-plugin
-version=1.1.0
+version=2.0.0
 release=1
-
 source=(http://archive.xfce.org/src/panel-plugins/$name/${version%.*}/$name-$version.tar.bz2)
 
 build() {

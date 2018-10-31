@@ -3,6 +3,7 @@
 description="Xfconf is the configuration storage system for Xfce."
 url="http://wiki.xfce.org/releng/4.6/general-info"
 packager="tyrry at nutyx dot org, tnut at nutyx dot org"
+
 alias=(xfconf)
 _name=xfconf
 name=xfce4-conf

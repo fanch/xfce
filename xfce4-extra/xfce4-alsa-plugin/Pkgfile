@@ -1,0 +1,21 @@
+# Description: Simple ALSA volume control for xfce4-panel
+# URL: https://github.com/equeim/xfce4-alsa-plugin
+# Packager: tnut at nutyx dot org
+# Depends on: meson alsa-lib xfce4-panel
+
+PKGMK_KEEP_SOURCES="no"
+
+name=xfce4-alsa-plugin
+version=0.1.2
+release=1
+source=(https://github.com/equeim/xfce4-alsa-plugin//archive/${version}.tar.gz)
+
+build() {
+cd $name-$version
+mkdir build
+cd build
+meson --prefix=/usr 
+ninja
+DESTDIR=$PKG ninja install
+}
+

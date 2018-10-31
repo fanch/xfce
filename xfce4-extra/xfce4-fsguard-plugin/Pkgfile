@@ -4,10 +4,9 @@
 # Depends on: xfce4-panel 
 
 name=xfce4-fsguard-plugin
-version=1.0.2
-release=2
-
-source=(http://archive.xfce.org/src/panel-plugins/$name/1.0/$name-$version.tar.bz2)
+version=1.1.0
+release=1
+source=(http://archive.xfce.org/src/panel-plugins/$name/1.1/$name-$version.tar.bz2)
 
 build() {
 cd $name-$version

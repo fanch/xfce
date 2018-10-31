@@ -1,28 +1,32 @@
 # Description: Xfce4 Session is a session manager for Xfce.
 # URL: http://www.xfce.org
 # Packager: tyrry at nutyx dot org, tnut at nutyx dot org
-# Depends on: gnupg polkit consolekit2 udisks upower xorg-libxres libwnck xfce4-libui xorg-app
+# Depends on: libwnck2 xfce4-libutil xfce4-libui xorg-iceauth udisks2 upower
 
-run=(udisks upower)
+run=(udisks2 upower)
 
 name=xfce4-session
 version=4.12.1
-release=3
+release=4
 
 source=(http://archive.xfce.org/src/xfce/$name/${version%.*}/$name-$version.tar.bz2
-0001-Pass-VT-number-to-xinit-if-XDG_VTNR-is-set.patch
-        xfce-polkit-gnome-authentication-agent-1.desktop)
+		0001-Pass-VT-number-to-xinit-if-XDG_VTNR-is-set.patch
+		0001-Make-verbose-logging-conditional-Bug-11698.patch
+		xfce4-session-source-system-xinitrc-scripts.patch
+		xfce-polkit-gnome-authentication-agent-1.desktop)
+
 build() {
 cd $name-$version
 patch -Np1 -i ../0001-Pass-VT-number-to-xinit-if-XDG_VTNR-is-set.patch
-./configure \
+patch -Np1 -i ../0001-Make-verbose-logging-conditional-Bug-11698.patch
+patch -Np1 -i ../xfce4-session-source-system-xinitrc-scripts.patch
+    ./configure \
     --prefix=/usr \
     --sysconfdir=/etc \
     --libexecdir=/usr/lib \
     --localstatedir=/var \
     --disable-static \
-    --disable-debug \
-    --disable-legacy-sm
+    --disable-debug
 make
 make DESTDIR=$PKG install
 install -d $PKG/etc/xdg/autostart
